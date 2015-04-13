@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import scraperwiki
+import sys
 import urllib2
 from urllib import urlencode
 from datetime import datetime
