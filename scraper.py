@@ -26,7 +26,8 @@ soup = BeautifulSoup(html)
 blocks = soup.findAll('div', {'class':'document-link'})
 
 for block in blocks:
-
+	print block
+	
 	link = block.a['href']
 
 	# add the right prefix onto the url
