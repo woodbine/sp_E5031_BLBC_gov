@@ -32,7 +32,7 @@ for block in blocks:
 	# add the right prefix onto the url
 	
 	print type(link)
-	cleanUrl = urllib.quote(pageUrl).encode('utf-8')
+	cleanUrl = urllib.quote(link).encode('utf-8')
 	print cleanUrl
 	
 	'''
