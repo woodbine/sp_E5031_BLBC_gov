@@ -31,7 +31,7 @@ for block in blocks:
 	link = block.a['href']
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
-	cleanUrl = urllib.urlencode(pageUrl)
+	cleanUrl = urlencode(pageUrl)
 	print cleanUrl
 	
 	'''
