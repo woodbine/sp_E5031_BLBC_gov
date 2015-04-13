@@ -31,8 +31,6 @@ for block in blocks:
 	
 	link = block.a['href']
 	# add the right prefix onto the url
-	
-	print type(link)
 	parsed_link = urlparse.urlsplit(link.encode('utf8'))
 	parsed_link = parsed_link._replace(path=urllib.quote(parsed_link.path))
 	encoded_link = parsed_link.geturl()
@@ -47,12 +45,7 @@ for block in blocks:
 		fileUrl = fileBlock.a['href']
 		
 		fileUrl = fileUrl.replace("/dam","https://www.barnet.gov.uk/dam")
-		urlTest = fileUrl.find('.csv')
-		print urlTest
-		
-		if urlTest == None:
-			print 'not a csv'
-		else:
+		if '.csv' in fileUrl:
 			# create the right strings for the new filename
 			fileUrl = fileUrl.upper().strip()
 			csvYr = fileUrl.split('_')[-1]
