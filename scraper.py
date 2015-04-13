@@ -36,11 +36,7 @@ for block in blocks:
 	parsed_link = urlparse.urlsplit(link.encode('utf8'))
 	parsed_link = parsed_link._replace(path=urllib.quote(parsed_link.path))
 	encoded_link = parsed_link.geturl()
-	print encoded_link
-	
-	#source = urllib2.urlopen(encoded_link).read()
-	'''
-	#pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
+	pageUrl = encoded_link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
 	
 	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
@@ -68,4 +64,3 @@ for block in blocks:
 			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date })
 			
 			print filename
-	'''
