@@ -28,6 +28,7 @@ blocks = soup.findAll('div', {'class':'document-link'})
 for block in blocks:
 	
 	link = block.a['href']
+	link = link.encode('utf8')
 	print link
 	
 	# add the right prefix onto the url
