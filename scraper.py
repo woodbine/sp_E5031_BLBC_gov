@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import scraperwiki
-import urllib2
+import urllib
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -19,7 +19,7 @@ def convert_mth_strings ( mth_string ):
 	return mth_string
 
 # pull down the content from the webpage
-html = urllib2.urlopen(url)
+html = urllib.urlopen(url)
 soup = BeautifulSoup(html)
 
 # find all entries with the required class
@@ -30,9 +30,9 @@ for block in blocks:
 	link = block.a['href']
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
-	pageUrl = urllib2.quote_plus
+	pageUrl = urllib.quote_plus
 	print pageUrl
-	html2 = urllib2.urlopen(pageUrl)
+	html2 = urllib.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	fileBlocks = soup2.findAll('li')
 	
