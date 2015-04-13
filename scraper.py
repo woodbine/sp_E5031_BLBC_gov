@@ -45,17 +45,16 @@ for block in blocks:
 	
 	for fileBlock in fileBlocks:
 		fileUrl = fileBlock.a['href']
-		print fileUrl
 		
 		fileUrl = fileUrl.replace("/dam","https://www.barnet.gov.uk/dam")
 		urlTest = fileUrl.find('.csv')
+		print urlTest
 		
 		if urlTest == None:
 			print 'not a csv'
 		else:
 			# create the right strings for the new filename
 			fileUrl = fileUrl.upper().strip()
-			print fileUrl
 			csvYr = fileUrl.split('_')[-1]
 			csvYr = csvYr.replace('.csv','')
 			csvMth = fileUrl.split('_')[-2][:3]
