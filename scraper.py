@@ -26,10 +26,10 @@ soup = BeautifulSoup(html)
 blocks = soup.findAll('div', {'class':'document-link'})
 
 for block in blocks:
-	print block
 	
 	link = block.a['href']
-
+	print link
+	
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
 	print pageUrl
