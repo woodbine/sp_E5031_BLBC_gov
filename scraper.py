@@ -31,8 +31,9 @@ for block in blocks:
 	link = block.a['href']
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
-	cleanUrl = urllib.quote_plus(pageUrl)
-	print cleanUrl
+	req = urllib2.Request(url, pageUrl.encode('utf-8'), {'Content-type': 'text/xml; charset=utf-8'})
+	response = urllib2.urlopen(req)
+	print response
 	
 	'''
 	html2 = urllib2.urlopen(pageUrl)
