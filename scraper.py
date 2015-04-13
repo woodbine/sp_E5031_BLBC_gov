@@ -29,12 +29,11 @@ for block in blocks:
 	
 	link = block.a['href']
 	link = link.encode('utf8')
-	print link
 	
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
 	print pageUrl
-	
+	'''
 	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	
@@ -63,3 +62,4 @@ for block in blocks:
 			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date })
 			
 			print filename
+	'''
