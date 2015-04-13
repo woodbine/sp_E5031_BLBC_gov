@@ -30,7 +30,8 @@ for block in blocks:
 	link = block.a['href']
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
-	pageUrl = pageUrl.encode('latin-1')
+	pageUrl = urllib2.urlencode
+	print pageUrl
 	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	fileBlocks = soup2.findAll('li')
