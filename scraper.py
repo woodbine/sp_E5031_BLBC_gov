@@ -40,13 +40,13 @@ for block in blocks:
 	
 	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
-	fileBlocks = soup2.findAll('li')
+	ts = soup2.find('div', {'class':'text-section'})
+	fileBlocks = ts.findAll('li')
 	
 	for fileBlock in fileBlocks:
 		fileUrl = fileBlock.a['href']
 		print fileUrl
 		
-	
 		fileUrl = fileUrl.replace("/dam","https://www.barnet.gov.uk/dam")
 		urlTest = fileUrl.find('.csv')
 		
