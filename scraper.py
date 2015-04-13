@@ -49,7 +49,7 @@ for block in blocks:
 			# create the right strings for the new filename
 			fileUrl = fileUrl.upper().strip()
 			title = fileBlock.a.contents[0]
-			
+			title = title.upper()
 			csvYr = title.split(' ')[-1]
 			csvMth = title.split(' ')[-2][:3]
 			csvMth = convert_mth_strings(csvMth);
