@@ -43,16 +43,15 @@ for block in blocks:
 	
 	for fileBlock in fileBlocks:
 		fileUrl = fileBlock.a['href']
-		
 		fileUrl = fileUrl.replace("/dam","https://www.barnet.gov.uk/dam")
+		
 		if '.csv' in fileUrl:
 			# create the right strings for the new filename
 			fileUrl = fileUrl.upper().strip()
-			print fileUrl
+			title = fileBlock.a.contents[0]
 			
-			csvYr = fileUrl.split('_')[-1]
-			csvYr = csvYr.replace('.csv','')
-			csvMth = fileUrl.split('_')[-2][:3]
+			csvYr = title.split(' ')[-1]
+			csvMth = title.split(' ')[-2][:3]
 			csvMth = convert_mth_strings(csvMth);
 			filename = entity_id + "_" + csvYr + "_" + csvMth
 			todays_date = str(datetime.now())
