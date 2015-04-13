@@ -32,9 +32,12 @@ for block in blocks:
 	# add the right prefix onto the url
 	
 	print type(link)
-	cleanUrl = urllib.quote_plus(link).encode('utf-8')
-	print cleanUrl
+	parsed_link = urlparse.urlsplit(link.encode('utf8'))
+	parsed_link = parsed_link._replace(path=urllib.quote(parsed_link.path))
+	encoded_link = parsed_link.geturl()
+	print encoded_link
 	
+	#source = urllib2.urlopen(encoded_link).read()
 	'''
 	#pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
 	
