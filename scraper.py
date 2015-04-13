@@ -50,8 +50,8 @@ for block in blocks:
 			fileUrl = fileUrl.upper().strip()
 			title = fileBlock.a.contents[0]
 			
-			csvYr = title.split(' ')[-2]
-			csvMth = title.split(' ')[-1][:3]
+			csvYr = title.split(' ')[-1]
+			csvMth = title.split(' ')[-2][:3]
 			csvMth = convert_mth_strings(csvMth);
 			filename = entity_id + "_" + csvYr + "_" + csvMth
 			todays_date = str(datetime.now())
