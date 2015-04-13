@@ -33,15 +33,16 @@ for block in blocks:
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
 	req = urllib2.Request(url, pageUrl.encode('utf-8'), {'Content-type': 'text/xml; charset=utf-8'})
 	response = urllib2.urlopen(req)
-	print req
+	html2 = urllib2.urlopen(req)
 	
-	'''
-	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	fileBlocks = soup2.findAll('li')
 	
 	for fileBlock in fileBlocks:
 		fileUrl = fileBlock.a['href']
+		print fileUrl
+		
+	'''
 		fileUrl = fileUrl.replace("/dam","https://www.barnet.gov.uk/dam")
 		urlTest = fileUrl.find('.csv')
 		
@@ -59,4 +60,4 @@ for block in blocks:
 			scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileUrl, "f": filename, "d": todays_date })
 			
 			print filename
-		'''
+	'''
