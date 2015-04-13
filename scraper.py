@@ -28,7 +28,6 @@ blocks = soup.findAll('div', {'class':'document-link'})
 for block in blocks:
 	
 	link = block.a['href']
-	link = link.encode('utf8')
 	
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
