@@ -55,6 +55,7 @@ for block in blocks:
 		else:
 			# create the right strings for the new filename
 			fileUrl = fileUrl.upper().strip()
+			print fileUrl
 			csvYr = fileUrl.split('_')[-1]
 			csvYr = csvYr.replace('.csv','')
 			csvMth = fileUrl.split('_')[-2][:3]
