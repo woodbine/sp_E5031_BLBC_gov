@@ -31,10 +31,9 @@ for block in blocks:
 	link = block.a['href']
 	# add the right prefix onto the url
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
-	req = urllib2.Request(url, pageUrl.encode('utf-8'), {'Content-type': 'text/xml; charset=utf-8'})
-	response = urllib2.urlopen(req)
-	html2 = urllib2.urlopen(req)
+	pageUrl = urllib.quote(pageUrl) #  changes chars to percentages for use in a url
 	
+	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	fileBlocks = soup2.findAll('li')
 	
