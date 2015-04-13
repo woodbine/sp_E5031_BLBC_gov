@@ -33,6 +33,9 @@ for block in blocks:
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
 	pageUrl = urllib2.quote(pageUrl) #  changes chars to percentages for use in a url
 	
+	print pageUrl
+	
+	'''
 	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	fileBlocks = soup2.findAll('li')
@@ -41,7 +44,7 @@ for block in blocks:
 		fileUrl = fileBlock.a['href']
 		print fileUrl
 		
-	'''
+	
 		fileUrl = fileUrl.replace("/dam","https://www.barnet.gov.uk/dam")
 		urlTest = fileUrl.find('.csv')
 		
