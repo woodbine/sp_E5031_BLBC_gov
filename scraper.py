@@ -33,7 +33,7 @@ for block in blocks:
 	pageUrl = link.replace("/citizen-home","https://www.barnet.gov.uk/citizen-home")
 	req = urllib2.Request(url, pageUrl.encode('utf-8'), {'Content-type': 'text/xml; charset=utf-8'})
 	response = urllib2.urlopen(req)
-	print response
+	print req
 	
 	'''
 	html2 = urllib2.urlopen(pageUrl)
