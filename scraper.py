@@ -85,7 +85,7 @@ def convert_mth_strings ( mth_string ):
 #### VARIABLES 1.0
 
 entity_id = "E5031_BLBC_gov"
-url = 'https://www.barnet.gov.uk/citizen-home/council-and-democracy/finance-and-funding/financial-statements-budgets-and-variance-reports/expenditure-over-gbp-500'
+url = 'https://www.barnet.gov.uk/citizen-home/council-and-democracy/finance-and-funding/financial-statements-budgets-and-variance-reports/expenditure-over-gbp-500/Expenditure-Reports-2016-17.html'
 errors = 0
 data = []
 
