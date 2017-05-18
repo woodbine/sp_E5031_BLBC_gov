@@ -121,11 +121,12 @@ for block in blocks:
         fileUrl = fileBlock.a['href']
         url = fileUrl.replace("/dam", "https://www.barnet.gov.uk/dam")
         if '.csv' in fileUrl and 'below' not in fileUrl:
-            title = fileBlock.a.contents[0]
+            title = fileBlock.a.text
             title = title.upper()
-            csvYr = title.split(' ')[-1]
-            csvMth = title.split(' ')[-2][:3]
+            csvYr = title.split()[-1]
+            csvMth = title.split()[-2][:3]
             csvMth = convert_mth_strings(csvMth.upper())
+            print(csvMth, csvYr)
             data.append([csvYr, csvMth, url])
 
 
@@ -135,7 +136,7 @@ for row in data:
     csvYr, csvMth, url = row
     filename = entity_id + "_" + csvYr + "_" + csvMth
     todays_date = str(datetime.now())
-    file_url = url.strip()
+    file_url = url.strip().encode('utf8')
 
     valid = validate(filename, file_url)
 
