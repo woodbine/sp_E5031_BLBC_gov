@@ -126,7 +126,6 @@ for block in blocks:
             csvYr = title.split()[-1]
             csvMth = title.split()[-2][:3]
             csvMth = convert_mth_strings(csvMth.upper())
-            print(csvMth, csvYr)
             data.append([csvYr, csvMth, url])
 
 
