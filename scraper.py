@@ -124,7 +124,11 @@ for block in blocks:
             title = fileBlock.a.text
             title = title.upper()
             csvYr = title.split()[-1]
-            csvMth = title.split()[-2][:3]
+            if 'CSV' in csvYr:
+                csvYr = title.split()[-2]
+                csvMth = title.split()[-3][:3]
+            else:
+                csvMth = title.split()[-2][:3]
             csvMth = convert_mth_strings(csvMth.upper())
             data.append([csvYr, csvMth, url])
 
